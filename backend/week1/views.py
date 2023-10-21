@@ -81,7 +81,6 @@ def cash(request):
         return Response({"message": "something went wrong"})
 
 
-# TODO: Credit
 @api_view(['POST']) 
 def credit(request):
     try:
@@ -107,8 +106,9 @@ def credit(request):
 
 
         length_of_card = int(Credit.get_card_length(credit_card_number))
-        first_digit_of_card = int(Credit.get_card_first_digit(credit_card_number))
+        first_digit_of_card = int(Credit.get_first_digit_of_card(credit_card_number))
         first_two_digits = int(Credit.get_first_two_digits_of_card(credit_card_number))
+
 
         if total % 10 == 0:
             if (length_of_card == 13 or length_of_card == 16) and first_digit_of_card == 4:
@@ -123,4 +123,4 @@ def credit(request):
         else:
             return Response({"card": "INVALID"})
     except Exception as error:
-        return Response({"message": "something went wrong", "error": error})
+        return Response({"message": "something went wrong", "error": str(error)})

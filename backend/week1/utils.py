@@ -60,4 +60,3 @@ class Credit:
             return f"something went wrong: {error}"
         
 
-print(Credit.get_card_length(4003600000000014))

@@ -17,8 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from week1 import views
+from week2 import views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('cs50-playground/v1/week1/', include('week1.urls'))
+    path('cs50-playground/v1/week1/', include('week1.urls')),
+    path('cs50-playground/v1/week2/', include('week2.urls'))
 ]
