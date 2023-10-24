@@ -2,9 +2,9 @@ from django.shortcuts import render
 
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from .utils import Readability
+from .utils import Readability, Caesar, Substitution
 
-
+import string
 # Create your views here.
 
 # readability
@@ -64,5 +64,85 @@ def bulbs(request):
 
         return Response(binary_quote)
 
+    except Exception as error:
+        return Response({"message": str(error)})
+    
+
+
+# caesar
+@api_view(['POST'])
+def caesar(request):
+    try:
+        plaintext = request.data['plaintext']
+        key = request.data['key']
+
+        cipher = []
+
+        if type(key) != int:
+            return Response({"message": "invalid cipher"})
+
+        if type(plaintext) != str:
+            return Response({"message": "invalid plaintext"})   
+
+        # rotate characters here
+        for char in str(plaintext):
+            if char.isupper():
+                char_to_int = (ord(char) - ord("A") + key) % 26
+                int_to_char = chr(char_to_int + ord("A"))
+                cipher.append(int_to_char)
+
+            elif char.islower():
+                char_to_int = (ord(char) - ord("a") + key) % 26
+                int_to_char = chr(char_to_int + ord("a"))
+                cipher.append(int_to_char)
+            
+            elif char.isspace():
+                cipher.append(char)
+
+            elif not char.isalnum():
+                cipher.append(char)
+
+        return Response({"chipertext": "".join(cipher)})
+
+    except Exception as error:
+        return Response({"message": str(error)})
+    
+
+
+@api_view(['POST'])
+def substitution(request):
+    try:
+        key = request.data['key']
+        plaintext = request.data['plaintext']
+
+        # check for key length
+        if len(key) != 26:
+            return Response({"message": "key must contain 26 characters"})
+        
+        # check if characters are actual letters
+        for char in key:
+            if not char.isalpha():
+                return Response({"message": "Invalid characters"})
+            
+        # check for duplicates
+        if Substitution.has_duplicates(key):
+            return Response({"message": "there is duplicates"})
+        
+
+        ciphertext = []
+
+        for char in plaintext:
+            if char.isupper():
+                current_index = ord(char) - ord("A")
+                ciphertext.append(key[current_index].upper())
+
+            elif char.islower():
+                current_index = ord(char) - ord("a")
+                ciphertext.append(key[current_index].lower())
+
+            else:
+                ciphertext.append(char)
+
+        return Response({"ciphertext": "".join(ciphertext)})
     except Exception as error:
         return Response({"message": str(error)})

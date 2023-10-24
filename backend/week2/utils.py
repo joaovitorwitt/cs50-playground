@@ -1,4 +1,5 @@
 import re
+import string
 
 class Readability:
     def count_letters(string):
@@ -26,5 +27,19 @@ class Readability:
         return number_of_sentences
 
 
-class Bulbs:
-    pass
+class Caesar:
+    @staticmethod
+    def only_digits(s):
+        return s.isdigit()
+    
+
+
+class Substitution:
+    @staticmethod
+    def has_duplicates(s):
+        char_set = set()
+        for char in s:
+            if char in char_set:
+                return True
+            char_set.add(char)
+        return False
