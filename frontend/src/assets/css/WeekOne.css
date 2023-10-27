@@ -1,0 +1,34 @@
+.data-container {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.data-container > .return-home-icon {
+  font-size: 1.6rem;
+  color: white;
+  margin-right: 3rem;
+  cursor: pointer;
+}
+
+.data-container > h1 {
+  color: white;
+}
+
+.problem-set-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.problem-set-wrapper > .list-link {
+  background-color: #333333b6;
+  margin: 2rem 0;
+  padding: 1rem;
+  color: aliceblue;
+  border-radius: 1vmax;
+}
+
+.problem-set-wrapper > .list-link:hover {
+  background-color: #33333371;
+}

@@ -75,10 +75,10 @@ def cash(request):
 
         sum_of_coins = quarters + dimes + nickels + pennies
 
-        return Response({"message": sum_of_coins})
+        return Response({"coins": sum_of_coins})
 
     except Exception as error:
-        return Response({"message": "something went wrong"})
+        return Response({"message": "something went wrong", "error": str(error)})
 
 
 @api_view(['POST']) 

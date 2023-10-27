@@ -6,6 +6,9 @@ import Home from "./pages/Home";
 import WeekOne from "./pages/WeekOne";
 import WeekTwo from "./pages/WeekTwo";
 import WeekThree from "./pages/WeekThree";
+import MarioLess from "./pages/W1/MarioLess";
+import Cash from "./pages/W1/Cash";
+import Credit from "./pages/W1/Credit";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +19,19 @@ const router = createBrowserRouter([
     path: "/week-one",
     element: <WeekOne />,
   },
+  {
+    path: "week-one/mario-less",
+    element: <MarioLess />,
+  },
+  {
+    path: "week-one/cash",
+    element: <Cash />,
+  },
+  {
+    path: "week-one/credit",
+    element: <Credit />,
+  },
+  // ================================
   {
     path: "/week-two",
     element: <WeekTwo />,

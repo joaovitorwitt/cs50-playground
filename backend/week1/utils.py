@@ -1,4 +1,5 @@
 class Cash:
+    @classmethod
     def calculate_quarters(self, cents):
         try:
             number_of_quarters = cents // 25
@@ -7,6 +8,7 @@ class Cash:
             return f"something went wrong: {error}"
         
 
+    @classmethod
     def calculate_dimes(self, cents):
         try:
             number_of_dimes = cents // 10
@@ -14,7 +16,7 @@ class Cash:
         except Exception as error:
             return f"something went wrong: {error}"
         
-
+    @classmethod
     def calculate_nickles(self, cents):
         try:
             number_of_nickles = cents // 5
@@ -22,7 +24,7 @@ class Cash:
         except Exception as error:
             return f"something went wrong: {error}"
         
-
+    @classmethod
     def calculate_pennies(self, cents):
         try:
             number_of_pennies = cents // 1

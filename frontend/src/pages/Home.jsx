@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import WelcomeTitle from "../components/WelcomeTitle";
 import "../assets/css/Home.css";
 import { Link } from "react-router-dom";
