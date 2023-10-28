@@ -41,7 +41,7 @@ export default function Cash() {
         <div className="problem-set-screen">
           <form onSubmit={calculateNumberOfCoins}>
             <input
-              type="text"
+              type="number"
               placeholder="number of cents"
               value={numberOfCents}
               onChange={(e) => setNumberOfCents(e.target.value)}

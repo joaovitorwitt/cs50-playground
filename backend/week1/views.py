@@ -55,7 +55,8 @@ def mario_more(request):
     except Exception as error:
         return Response({"message": "something went wrong"})
 
-# TODO: Cash
+
+
 @api_view(['POST'])
 def cash(request):
     try:

@@ -9,6 +9,10 @@ import WeekThree from "./pages/WeekThree";
 import MarioLess from "./pages/W1/MarioLess";
 import Cash from "./pages/W1/Cash";
 import Credit from "./pages/W1/Credit";
+import Readability from "./pages/W2/Readability";
+import Bulbs from "./pages/W2/Bulbs";
+import Caesar from "./pages/W2/Caesar";
+import Substitution from "./pages/W2/Substitution";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +40,23 @@ const router = createBrowserRouter([
     path: "/week-two",
     element: <WeekTwo />,
   },
+  {
+    path: "week-two/readability",
+    element: <Readability />,
+  },
+  {
+    path: "week-two/bulbs",
+    element: <Bulbs />,
+  },
+  {
+    path: "week-two/caesar",
+    element: <Caesar />,
+  },
+  {
+    path: "week-two/substitution",
+    element: <Substitution />,
+  },
+  // ================================
   {
     path: "/week-three",
     element: <WeekThree />,

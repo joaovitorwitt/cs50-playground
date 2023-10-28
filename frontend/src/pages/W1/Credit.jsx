@@ -42,7 +42,7 @@ export default function Credit() {
         <div className="problem-set-screen">
           <form onSubmit={validateCreditCard}>
             <input
-              type="text"
+              type="number"
               placeholder="type the number of the credit card"
               value={creditCardNumber}
               onChange={(e) => setCreditCardNumber(e.target.value)}

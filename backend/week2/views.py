@@ -102,7 +102,7 @@ def caesar(request):
             elif not char.isalnum():
                 cipher.append(char)
 
-        return Response({"chipertext": "".join(cipher)})
+        return Response({"ciphertext": "".join(cipher)})
 
     except Exception as error:
         return Response({"message": str(error)})

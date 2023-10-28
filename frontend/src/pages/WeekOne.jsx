@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "../assets/css/WeekOne.css";
+import "../assets/css/Weeks.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
 
