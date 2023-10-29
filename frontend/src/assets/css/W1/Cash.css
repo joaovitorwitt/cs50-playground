@@ -1,3 +1,22 @@
 .cash-wrapper {
   padding: 1rem;
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.cash-form {
+  row-gap: 1rem;
+  margin-top: 2rem;
+}
+
+.display-value {
+  margin-top: 2rem;
+}

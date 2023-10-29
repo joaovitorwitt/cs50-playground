@@ -35,17 +35,23 @@ export default function Readability() {
     <>
       <div className="readability-wrapper">
         <div className="problem-set-description">
-          <p>Find out the grade level for your text!</p>
+          <p>
+            Find out the grade level for your text! Enter some text to calculate
+            the approximate grade level for your text
+          </p>
         </div>
         <div className="problem-set-screen">
-          <form onSubmit={calculateTextGrade}>
+          <form onSubmit={calculateTextGrade} className="grid readability-form">
             <textarea
               value={textString}
               onChange={(e) => setTextString(e.target.value)}
+              className="standard-textarea-input"
             ></textarea>
-            <input type="submit" value={"check grade text"} />
+            <input type="submit" value={"check grade text"} className="btn" />
           </form>
-          <div>{grade}</div>
+          <div className="display-value">
+            <p>Grade: {grade ? grade : 0}</p>
+          </div>
         </div>
       </div>
     </>

@@ -23,9 +23,9 @@ def readability(request):
         index = 0.0588 * L - 0.296 * S - 15.8
 
         if index < 1:
-            return Response({"Grade": "Before Grade 1"})
+            return Response({"Grade": "Before 1", "index": index})
         elif index >= 16:
-            return Response({"Grade": "Grade 16+"})
+            return Response({"Grade": "Above 16", "index": index})
         else:
             return Response({"Grade": round(index)})
 

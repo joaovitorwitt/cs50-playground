@@ -17,3 +17,63 @@ body {
 a {
   text-decoration: none;
 }
+
+.standard-text-input {
+  border-radius: 0.7vmax;
+  padding: 0.7rem;
+  font-size: large;
+  background-color: rgb(59, 59, 59);
+  color: white;
+  border: none;
+}
+
+.standard-text-input:focus {
+  outline: 2px solid rgb(0, 102, 255);
+}
+
+.standard-number-input {
+  border-radius: 0.7vmax;
+  padding: 0.7rem;
+  font-size: large;
+  background-color: rgb(59, 59, 59);
+  color: white;
+  border: none;
+}
+
+.standard-number-input:focus {
+  outline: 2px solid rgb(0, 102, 255);
+}
+
+.standard-textarea-input {
+  background-color: rgb(59, 59, 59);
+  color: white;
+  border: none;
+  font-size: large;
+  border-radius: 0.7vmax;
+  padding: 0.7rem;
+  border: none;
+  height: 140px;
+  resize: vertical;
+}
+
+.standard-textarea-input:focus {
+  outline: 2px solid rgb(0, 102, 255);
+}
+
+.btn {
+  color: white;
+  border-radius: 0.7vmax;
+  border: none;
+  padding: 1rem;
+  text-transform: uppercase;
+  background-color: rgb(0, 102, 255);
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: rgba(0, 102, 255, 0.808);
+}
+
+.grid {
+  display: grid;
+}

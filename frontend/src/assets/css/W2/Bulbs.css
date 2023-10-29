@@ -1,0 +1,14 @@
+.bulbs-wrapper {
+  padding: 1rem;
+}
+
+.bulbs-form {
+  margin-top: 2rem;
+  row-gap: 1rem;
+}
+
+.display-value-bulbs {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}

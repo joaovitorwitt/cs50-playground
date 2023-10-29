@@ -34,22 +34,23 @@ export default function Credit() {
       <div className="credit-wrapper">
         <div className="problem-set-description">
           <p>
-            Type a hypotetically card number and it will tell you if it is valid
-            or not
+            Most cards use an algorithm invented by Hans Peter Luhn of IBM.
+            Enter a card number to check if it is valid.
           </p>
         </div>
 
         <div className="problem-set-screen">
-          <form onSubmit={validateCreditCard}>
+          <form onSubmit={validateCreditCard} className="grid credit-form">
             <input
               type="number"
-              placeholder="type the number of the credit card"
+              placeholder="Card Number"
               value={creditCardNumber}
               onChange={(e) => setCreditCardNumber(e.target.value)}
+              className="standard-number-input"
             />
-            <input type="submit" value={"Check"} />
+            <input type="submit" value={"validate card"} className="btn" />
           </form>
-          {isCardValid}
+          <div className="display-value">Card: {isCardValid}</div>
         </div>
       </div>
     </>

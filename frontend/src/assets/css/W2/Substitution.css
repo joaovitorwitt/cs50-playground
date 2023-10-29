@@ -1,0 +1,30 @@
+.substitution-wrapper {
+  padding: 1rem;
+}
+
+.substitution-form {
+  row-gap: 1rem;
+  margin-top: 2rem;
+}
+
+.input-row {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  column-gap: 1rem;
+}
+
+.generate-key-btn {
+  border-radius: 0.7vmax;
+  border: none;
+  background-color: rgba(164, 76, 247, 0.644);
+  color: white;
+  cursor: pointer;
+}
+
+.generate-key-btn:hover {
+  background-color: rgba(164, 76, 247, 0.452);
+}
+
+.display-value {
+  margin-top: 2rem;
+}

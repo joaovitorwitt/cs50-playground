@@ -34,22 +34,28 @@ export default function Cash() {
       <div className="cash-wrapper">
         <div className="problem-set-description">
           <p>
-            Here, based on the number of cents, we can see how many coins will
-            be necessary for the change
+            Calculate the number of coins owned based on the number of cents
           </p>
         </div>
         <div className="problem-set-screen">
-          <form onSubmit={calculateNumberOfCoins}>
+          <form onSubmit={calculateNumberOfCoins} className="grid cash-form">
             <input
               type="number"
               placeholder="number of cents"
               value={numberOfCents}
               onChange={(e) => setNumberOfCents(e.target.value)}
+              className="standard-number-input"
             />
-            <input type="submit" value={"Calculate Coins"} />
+            <input
+              type="submit"
+              value={"Calculate Coins"}
+              className="btn cash-btn"
+            />
           </form>
         </div>
-        <p>{numberOfCoins}</p>
+        <div className="display-value">
+          <p>Coins: {numberOfCoins ? numberOfCoins : 0}</p>
+        </div>
       </div>
     </>
   );

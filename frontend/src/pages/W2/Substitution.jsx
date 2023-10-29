@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "../../assets/css/W2/Substitution.css";
 
 export default function Substitution() {
   const [substitutionKey, setSubstitutionKey] = useState("");
@@ -32,6 +33,23 @@ export default function Substitution() {
     }
   }
 
+  // TODO: feature that generates a random key
+  // containing all the letters from the alphabet
+  function generateRandomKey() {
+    const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    let newAlphabet = alphabet.split("");
+
+    for (let i = newAlphabet.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i * 1));
+      var temp = newAlphabet[i];
+      newAlphabet[i] = newAlphabet[j];
+      newAlphabet[j] = temp;
+    }
+    const shuffledAlphabet = newAlphabet.join(""); // Convert the array back to a string
+    console.log(shuffledAlphabet);
+    setSubstitutionKey(shuffledAlphabet);
+  }
+
   return (
     <>
       <div className="substitution-wrapper">
@@ -42,23 +60,37 @@ export default function Substitution() {
           </p>
         </div>
         <div className="problem-set-screen">
-          <form onSubmit={encryptMessage}>
-            <input
-              type="text"
-              placeholder="key"
-              value={substitutionKey}
-              onChange={(e) => setSubstitutionKey(e.target.value)}
-            />
-
+          <form onSubmit={encryptMessage} className="grid substitution-form">
             <textarea
-              placeholder="message that your want to encrypt"
+              placeholder="Plaintext"
               value={substitutionPlaintext}
               onChange={(e) => setSubstitutionPlaintext(e.target.value)}
+              className="standard-textarea-input"
+              required
             ></textarea>
+            <div className="input-row">
+              <input
+                className="standard-text-input"
+                type="text"
+                placeholder="key"
+                value={substitutionKey}
+                onChange={(e) => setSubstitutionKey(e.target.value)}
+                required
+              />
+              <button
+                className="generate-key-btn"
+                onClick={generateRandomKey}
+                type="button"
+              >
+                Generate Random key
+              </button>
+            </div>
 
-            <input type="submit" value={"Encrypt"} />
+            <input type="submit" value={"Encrypt"} className="btn" />
           </form>
-          {ciphertext}
+          <div className="display-value">
+            <p>Ciphertext: {ciphertext}</p>
+          </div>
         </div>
       </div>
     </>
