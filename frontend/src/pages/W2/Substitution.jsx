@@ -24,7 +24,9 @@ export default function Substitution() {
           }),
         }
       );
-
+      // clear input fields
+      setSubstitutionPlaintext("");
+      setSubstitutionKey("");
       const data = await response.json();
       console.log(data);
       setCiphertext(data.ciphertext);
@@ -33,7 +35,7 @@ export default function Substitution() {
     }
   }
 
-  // TODO: feature that generates a random key
+  // this feature generates a random key
   // containing all the letters from the alphabet
   function generateRandomKey() {
     const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";

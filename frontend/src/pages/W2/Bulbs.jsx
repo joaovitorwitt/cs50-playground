@@ -21,7 +21,8 @@ export default function Bulbs() {
           }),
         }
       );
-
+      // clear input fields
+      setInputMessage("");
       const data = await response.json();
       console.log(data);
       setEncodedMessage(data);

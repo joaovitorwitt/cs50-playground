@@ -13,11 +13,8 @@ export default function WeekOne() {
         <h1>Which problem set would you like to play?</h1>
       </div>
       <nav className="problem-set-wrapper">
-        <Link to={"mario-less"} className="list-link">
-          Mario Less
-        </Link>
-        <Link to={"mario-more"} className="list-link">
-          Mario More
+        <Link to={"mario"} className="list-link">
+          Mario
         </Link>
         <Link to={"cash"} className="list-link">
           Cash

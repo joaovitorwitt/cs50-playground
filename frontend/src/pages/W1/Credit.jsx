@@ -21,7 +21,8 @@ export default function Credit() {
           }),
         }
       );
-
+      // clear input fields
+      setCreditCardNumber("");
       const data = await response.json();
       console.log(data);
       setIsCardValid(data.card);

@@ -1,12 +1,21 @@
 .mario-less-wrapper {
-  height: 100vh;
+  padding: 1rem;
 }
 
-.problem-description {
+.mario-form {
+  row-gap: 1rem;
+  margin-top: 2rem;
+}
+
+.input-row-mario {
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
-  padding: 1rem;
-  max-width: 500px;
-  align-items: center;
+}
+
+.input-row-mario input {
+  margin-right: 1.7rem;
+}
+
+.pyramid-screen {
+  margin-top: 2rem;
 }

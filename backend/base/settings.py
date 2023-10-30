@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'week1',
     'week2',
+    'week4',
     'corsheaders',
 ]
 

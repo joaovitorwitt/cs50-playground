@@ -20,7 +20,8 @@ export default function Cash() {
           }),
         }
       );
-
+      // clear input field
+      setNumberOfCents("");
       const data = await response.json();
       setNumberOfCoins(data.coins);
       console.log(data);

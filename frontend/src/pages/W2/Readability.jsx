@@ -21,7 +21,8 @@ export default function Readability() {
           }),
         }
       );
-
+      // clear input fields
+      setTextString("");
       const data = await response.json();
 
       setGrade(data.Grade);

@@ -13,6 +13,8 @@ import Readability from "./pages/W2/Readability";
 import Bulbs from "./pages/W2/Bulbs";
 import Caesar from "./pages/W2/Caesar";
 import Substitution from "./pages/W2/Substitution";
+import WeekFour from "./pages/WeekFour";
+import Volume from "./pages/W4/Volume";
 
 const router = createBrowserRouter([
   {
@@ -24,7 +26,7 @@ const router = createBrowserRouter([
     element: <WeekOne />,
   },
   {
-    path: "week-one/mario-less",
+    path: "week-one/mario",
     element: <MarioLess />,
   },
   {
@@ -60,6 +62,15 @@ const router = createBrowserRouter([
   {
     path: "/week-three",
     element: <WeekThree />,
+  },
+  // ================================
+  {
+    path: "/week-four",
+    element: <WeekFour />,
+  },
+  {
+    path: "week-four/volume",
+    element: <Volume />,
   },
 ]);
 

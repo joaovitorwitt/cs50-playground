@@ -60,6 +60,13 @@ a {
   outline: 2px solid rgb(0, 102, 255);
 }
 
+.standard-file-input {
+  background-color: rgba(164, 76, 247, 0.644);
+  border-radius: 0.7vmax;
+  border: none;
+  padding: 0.7rem;
+}
+
 .btn {
   color: white;
   border-radius: 0.7vmax;

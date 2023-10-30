@@ -23,7 +23,9 @@ export default function Caesar() {
           }),
         }
       );
-
+      // clear input fields
+      setPlaintext("");
+      setKey("");
       const data = await response.json();
       setCiphertext(data.ciphertext);
       console.log(data);
