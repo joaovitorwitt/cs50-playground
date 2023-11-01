@@ -1,0 +1,6 @@
+class Plurality:
+    def print_winner():
+        ...
+    
+    def vote():
+        ...

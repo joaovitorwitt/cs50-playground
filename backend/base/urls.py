@@ -18,11 +18,14 @@ from django.contrib import admin
 from django.urls import path, include
 from week1 import views
 from week2 import views
+from week3 import views
 from week4 import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('cs50-playground/v1/week1/', include('week1.urls')),
     path('cs50-playground/v1/week2/', include('week2.urls')),
-    path('cs50-playground/v1/week4/', include('week4.urls'))
+    path('cs50-playground/v1/week3/', include('week3.urls')),
+    path('cs50-playground/v1/week4/', include('week4.urls')),
+
 ]

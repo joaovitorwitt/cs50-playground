@@ -21,17 +21,17 @@ export default function Volume() {
       const response = await fetch(
         "http://127.0.0.1:8000/cs50-playground/v1/week4/volume",
         {
-          headers: {
-            "Content-Type": "audio/wav",
-          },
           method: "POST",
           body: formData,
         }
       );
 
-      const url = URL.createObjectURL(await response.blob());
-      console.log(url);
-      setNewAudioFile(url);
+      if (response.ok) {
+        const blob = await response.blob();
+        setNewAudioFile(URL.createObjectURL(blob));
+      } else {
+        throw new Error("failed to process audio file");
+      }
     } catch (error) {
       throw new Error(error);
     } finally {
