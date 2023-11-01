@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from django.http import FileResponse
+
 
 import wave
 import struct
@@ -45,7 +47,12 @@ def volume(request):
             input_wav.close()
             output_wav.close()
 
-            return Response({"message": "Volume changed", "output_audio_file": output_file})
+            # return the actual file
+            with open(output_file, 'rb') as file:
+                 response = FileResponse(file, as_attachment=True, filename='output.wav')
+
+            return response
+            # return Response({"message": "Volume changed", "output_audio_file": output_file})
         
         except Exception as error:
              return Response({"error": str(error)})
