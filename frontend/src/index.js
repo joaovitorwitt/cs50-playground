@@ -15,6 +15,7 @@ import Caesar from "./pages/W2/Caesar";
 import Substitution from "./pages/W2/Substitution";
 import WeekFour from "./pages/WeekFour";
 import Volume from "./pages/W4/Volume";
+import Plurality from "./pages/W3/Plurality";
 
 const router = createBrowserRouter([
   {
@@ -62,6 +63,10 @@ const router = createBrowserRouter([
   {
     path: "/week-three",
     element: <WeekThree />,
+  },
+  {
+    path: "week-three/plurality",
+    element: <Plurality />,
   },
   // ================================
   {
